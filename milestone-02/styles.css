@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: #EC2D01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-left: 50px;
+}
+
+.tab {
+    border: none;
+    color: white;
+    background-color: #EC2D01;
+    padding: 14px 25px;
+    font-size: 16px;
+}
+
+.tab:hover {
+    background-color: rgb(169, 21, 21);
+}
+
+#profilePic {
+    float: right;
+    width: 35px;
+    height: 35px;
+}
+
+.collapsible {
+    position: relative;
+    background-color: lightcoral;
+    color: Black;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 60px;
+}
+
+.active, .collapsible:hover {
+    background-color: coral;
+}
+
+.content {
+    padding: 18px;
+    display: none;
+    overflow: hidden;
+    width: 47.75%;
+    background-color: white;
+    margin-left: 60px;
+}
+
+#calendar{
+    background-color: #C9E5C4;
+}
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(7, 50px);
+    margin: 0 auto; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.calendar-day {
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+    grid-gap: 0;
+    border: 1px solid;
+}

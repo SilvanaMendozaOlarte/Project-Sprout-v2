@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Clubbernaut</title>
+    <link rel="icon" type="image/x-icon" href="BOB!!!!.png">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav id="navbar">
+        <img id="logo" src="BOB!!!!.png">
+        <div class="tabs">
+            <button class="tab" id="tab_pomodoro">Pomodoro</button>
+            <button class="tab" id="tab_farm">Farm</button>
+            <button class="tab" id="tab_shop">Shop</button>
+            <button class="tab" id="tab_projects">Projects</button>
+        </div>
+        <button class="tab" id="tab_sign_in">Sign In</button>
+        <img id="avatar" height="43" width="43" style="display: none;">
+    </nav>
+
+    <!-- Navbar Tabs -->
+
+    <div id="sign_in" class="page" style="display: block;">
+        <form>
+            <h1>Sign In</h1>
+            <label for="sign_in_email">Email:</label><br>
+            <input type="email" id="sign_in_email" required><br>
+            <label for="sign_in_password">Password:</label><br>
+            <input type="password" id="sign_in_password" required><br>
+            <input type="button" id="sign_in_button" value="Sign In">
+            <div id="sign_in_alert"></div>
+        </form>
+        <input type="button" id="sign_in_to_sign_up" value="Sign Up">
+    </div>
+
+    <!-- TODO - Silvana -->
+
+    <div id="pomodoro" class="page" style="display: none;">
+        <h1>Pomodoro</h1>
+        <p>This is the content of Pomodoro.</p>
+        <!-- !Calendar Div -->
+        <div id="calendar" class="calendar">
+        </div>
+    </div>
+
+    <!-- TODO - Jacob -->
+
+    <div id="farm" class="page" style="display: none;">
+        
+    </div>
+
+    <!-- TODO - Donald -->
+
+    <div id="shop" class="page" style="display: none;">
+        <h1>Shop</h1>
+        <!-- Shop Navbar Tabs -->
+        <nav>
+            <button class="tab_shop_category" id="tab_shop_category_house">House</button>
+            <button class="tab_shop_category" id="tab_shop_category_garden">Garden</button>
+            <button class="tab_shop_category" id="tab_shop_category_plants">Plants</button>
+            <button class="tab_shop_category" id="tab_shop_category_avatar">Avatar</button>
+        </nav>
+        <div id="shop_category_house" class="shop_category"></div>
+    </div>
+
+    <!-- TODO - Chris -->
+
+    <div id="projects" class="page" style="display: none;">
+        <h1>Projects</h1>
+        <p>This is the content of Projects.</p><br>
+        <div class="collapsibles">
+            <button type="button" class="collapsible">Miscellaneous Tasks</button>
+            <div class="content">
+                <menu>
+                    <li>Task 1</li>
+                    <li>Task 2</li>
+                    <li>Task 3</li>
+                </menu>
+            </div>
+            <button type="button" class="collapsible">Project 1</i></button>
+            <div class="content">
+                <menu>
+                    <li>Task 1</li>
+                    <li>Task 2</li>
+                    <li>Task 3</li>
+                </menu>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Tabs -->
+
+    <div id="sign_up" class="page" style="display: none;">
+        <h1>Sign Up</h1>
+        <form>
+            <label for="sign_up_email">Email:</label><br>
+            <input type="email" id="sign_up_email" required><br>
+            <label for="sign_up_username">Username:</label><br>
+            <input type="text" id="sign_up_username" required><br>
+            <label for="sign_up_password">Password:</label><br>
+            <input type="password" id="sign_up_password" required><br>
+            <label for="sign_up_confirm_password">Confirm Password:</label><br>
+            <input type="password" id="sign_up_confirm_password" required><br>
+            <input type="button" id="sign_up_button" value="Sign Up">
+            <div id="sign_up_alert"></div>
+        </form>
+        <input type="button" id="sign_up_to_sign_in" value="Sign In">
+    </div>
+
+    <div id="user_settings" class="page" style="display: none;">
+        <h1>User Settings</h1>
+        <p>This is the content of User Settings.</p>
+    </div>
+
+    <div id="forgot_password" class="page" style="display: none;">
+        <h1>Forgot Password</h1>
+        <p>This is the content of Forgot Password.</p>
+    </div>
+
+    <div id="sign_up_successful" class="page" style="display: none;">
+        <p>You signed up!</p>
+    </div>
+
+    <div id="sign_in_successful" class="page" style="display: none;">
+        <p>You signed in!</p>
+    </div>
+
+    <!-- Normal JavaScript -->
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <!-- Module JavaScript -->
+
+    <script type="module">
+        // Imports page and shop category changing functions
+        import ChangePage from './changePage.js';
+        import ChangeShopCategory from './changeShopCategory.js';
+        // Instantiates page and shop category changing objects
+        const pageChanger = new ChangePage();
+        const shopCategoryChanger = new ChangeShopCategory();
+        // Setting up event listeners to change pages
+        document.getElementById('tab_pomodoro').addEventListener('click', () => pageChanger.changePage('pomodoro'));
+        document.getElementById('tab_farm').addEventListener('click', () => pageChanger.changePage('farm'));
+        document.getElementById('tab_shop').addEventListener('click', () => pageChanger.changePage('shop'));
+        document.getElementById('tab_projects').addEventListener('click', () => pageChanger.changePage('projects'));
+        document.getElementById('tab_sign_in').addEventListener('click', () => pageChanger.changePage('sign_in'));
+        document.getElementById('sign_in_button').addEventListener('click', () => pageChanger.changePage('sign_in_successful'));
+        document.getElementById('sign_up_button').addEventListener('click', () => pageChanger.changePage('sign_up_successful'));
+        document.getElementById('sign_in_to_sign_up').addEventListener('click', () => pageChanger.changePage('sign_up'));
+        document.getElementById('sign_up_to_sign_in').addEventListener('click', () => pageChanger.changePage('sign_in'));
+        // Setting up event listeners to change shop categories
+    </script>
+    <script src="Calendar.js"></script>
+</body>
+</html>
