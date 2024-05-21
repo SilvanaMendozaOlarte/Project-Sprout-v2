@@ -1,0 +1,105 @@
+section{
+  display: grid;
+  place-content: center;
+
+}
+body{
+ 
+  background-color: white;
+  margin: 0;
+  overscroll-behavior: block;
+}
+
+.page-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+}
+
+.page-body-inner{
+  background-color: white;
+  width: 90vw;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-body-inner-inner{
+  width:85vw;
+}
+
+header
+{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: lightgreen !important;
+    color: black;
+  }
+
+  .navbar a.side {
+    float: right;
+    background-color: green;
+    color: white;
+  }
+
+  #team-container
+  {
+  margin: 20px auto;
+  width:420px;
+  height:600px;
+  background-color:green;
+  display:grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border-color: green;
+  border-style: solid;
+  border-width: 10px;
+  }
+  .member
+  {
+    display: grid;
+    place-content: center;
+    background-color:white;
+    color:black;
+  }
+  h2{
+    color:green;
+  }
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  
+  
