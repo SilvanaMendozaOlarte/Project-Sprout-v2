@@ -1,0 +1,151 @@
+{
+    "tasks": [],
+    "projects": [],
+    "pomodoros": [],
+    "shop_items": [
+        {
+            "id": 0,
+            "name": "item1",
+            "category": "house",
+            "price": 100
+        },
+        {
+            "id": 1,
+            "name": "item2",
+            "category": "house",
+            "price": 200
+        },
+        {
+            "id": 2,
+            "name": "item3",
+            "category": "house",
+            "price": 300
+        },
+        {
+            "id": 3,
+            "name": "item4",
+            "category": "house",
+            "price": 400
+        },
+        {
+            "id": 4,
+            "name": "item5",
+            "category": "house",
+            "price": 500
+        },
+        {
+            "id": 5,
+            "name": "item6",
+            "category": "house",
+            "price": 600
+        },
+        {
+            "id": 6,
+            "name": "item1",
+            "category": "garden",
+            "price": 100
+        },
+        {
+            "id": 7,
+            "name": "item2",
+            "category": "garden",
+            "price": 200
+        },
+        {
+            "id": 8,
+            "name": "item3",
+            "category": "garden",
+            "price": 300
+        },
+        {
+            "id": 9,
+            "name": "item4",
+            "category": "garden",
+            "price": 400
+        },
+        {
+            "id": 10,
+            "name": "item5",
+            "category": "garden",
+            "price": 500
+        },
+        {
+            "id": 11,
+            "name": "item6",
+            "category": "garden",
+            "price": 600
+        },
+        {
+            "id": 12,
+            "name": "item1",
+            "category": "plants",
+            "price": 100
+        },
+        {
+            "id": 13,
+            "name": "item2",
+            "category": "plants",
+            "price": 200
+        },
+        {
+            "id": 14,
+            "name": "item3",
+            "category": "plants",
+            "price": 300
+        },
+        {
+            "id": 15,
+            "name": "item4",
+            "category": "plants",
+            "price": 400
+        },
+        {
+            "id": 16,
+            "name": "item5",
+            "category": "plants",
+            "price": 500
+        },
+        {
+            "id": 17,
+            "name": "item6",
+            "category": "plants",
+            "price": 600
+        },
+        {
+            "id": 18,
+            "name": "item1",
+            "category": "avatar",
+            "price": 100
+        },
+        {
+            "id": 19,
+            "name": "item2",
+            "category": "avatar",
+            "price": 200
+        },
+        {
+            "id": 20,
+            "name": "item3",
+            "category": "avatar",
+            "price": 300
+        },
+        {
+            "id": 21,
+            "name": "item4",
+            "category": "avatar",
+            "price": 400
+        },
+        {
+            "id": 22,
+            "name": "item5",
+            "category": "avatar",
+            "price": 500
+        },
+        {
+            "id": 23,
+            "name": "item6",
+            "category": "avatar",
+            "price": 600
+        }
+    ]
+}

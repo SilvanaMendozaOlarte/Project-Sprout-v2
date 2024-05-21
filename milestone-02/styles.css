@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: #EC2D01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-left: 50px;
+}
+
+.tab {
+    border: none;
+    color: white;
+    background-color: #EC2D01;
+    padding: 14px 25px;
+    font-size: 16px;
+}
+
+.tab:hover {
+    background-color: rgb(169, 21, 21);
+}
+
+#profilePic {
+    float: right;
+    width: 35px;
+    height: 35px;
+}
+/* Collapsible Style */
+.collapsible {
+    position: relative;
+    background-color: lightcoral;
+    color: Black;
+    border-color: lightgray;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 60px;
+}
+
+.active, .collapsible:hover {
+    background-color: coral;
+}
+
+.content {
+    padding: 18px;
+    display: none;
+    overflow: hidden;
+    width: 47.75%;
+    background-color: white;
+    margin-left: 60px;
+}
+/* Project Popup Style */
+#createProjectButton {
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-bottom: 10px;
+}
+
+.projectPopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+    );
+    display: none;
+}
+.taskPopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+    );
+    display: none;
+}
+.projectRemovePopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+    );
+    display: none;
+}
+.removeTaskProjectPopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+    );
+    display: none;
+}
+.removeTaskTaskPopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+    );
+    display: none;
+}
+
+#projectList {
+    margin-bottom: 10px;
+}
+
+.popup-content {
+    text-align: center;
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 30%;
+    font-weight: bolder;
+}
+.popup-content text {
+    display: block;
+    margin: 0 auto;
+}
+.popup-content input {
+    display: block;
+    margin: 0 auto;
+}
+.popup-content button {
+    display: block;
+    margin: 0 auto;
+}
+.show {
+    display: block;
+}
+
+.btn-group button {
+    background-color: lightgray; 
+    color: white;
+    display: table-row;
+    margin: auto;
+    margin-top: 10px;
+    width: 40%;
+    padding: 10px 24px; 
+    cursor: pointer;
+  }
+  
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:hover {
+    background-color: gray;
+  }
