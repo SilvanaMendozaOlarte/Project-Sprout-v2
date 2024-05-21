@@ -1,0 +1,49 @@
+body{
+    background-color: whitesmoke;
+    overscroll-behavior: none;
+
+ 
+}
+#temp-doc
+{
+    font-size: 12px;
+    font-family: 'Times New Roman';
+    height:60vw;
+    width:60vw;
+    background-color: white;
+    outline: 0px none;
+    resize: none;
+    line-height: 1;
+}
+.wc-wrapper
+{
+    float:right;
+    height:5vw;
+    width: 10vw;
+    border-radius: 15px;
+    color:black;
+    background-color: lightgray;
+    
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+a{
+    font-family: 'Times New Roman';
+    text-decoration: none;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    margin-left: 60px;
+    float:left;
+    height:5vw;
+    width: 10vw;
+    border-radius: 15px;
+    color:black;
+    background-color: green;
+}

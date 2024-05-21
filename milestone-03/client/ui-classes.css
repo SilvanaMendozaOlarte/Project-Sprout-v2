@@ -1,0 +1,87 @@
+.pom-button {
+ appearance: button;
+ background-color: #d61818;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 13px 19px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
+}
+
+.pom-button:after {
+ background-clip: padding-box;
+ background-color: red;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ bottom: -4px;
+ content: "";
+ left: 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ z-index: -1;
+}
+
+.pom-button:main, button:focus {
+ user-select: auto;
+}
+
+.pom-button:hover:not(:disabled) {
+ filter: brightness(1.1);
+}
+
+.pom-button:disabled {
+ cursor: auto;
+}
+
+.pom-button:active:after {
+ border-width: 0 0 0px;
+}
+
+.pom-button:active {
+ padding-bottom: 10px;
+}
+
+.input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+  
+  .input:hover,
+  .input:focus {
+    border: 2px solid #e43030;
+    box-shadow: 0px 0px 0px 7px rgba(163, 110, 120, 0.2);
+    background-color: white;
+  }
+  .center {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
