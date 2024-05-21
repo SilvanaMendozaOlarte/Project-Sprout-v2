@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #EC2D01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-left: 50px;
+}
+
+.tab {
+    border: none;
+    color: white;
+    background-color: #EC2D01;
+    padding: 14px 25px;
+    font-size: 16px;
+}
+
+.tab:hover {
+    background-color: rgb(169, 21, 21);
+}
+
+#profilePic {
+    float: right;
+    width: 35px;
+    height: 35px;
+}
+
+.collapsible {
+    position: relative;
+    background-color: lightcoral;
+    color: Black;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 60px;
+}
+
+.active, .collapsible:hover {
+    background-color: coral;
+}
+
+.content {
+    padding: 18px;
+    display: none;
+    overflow: hidden;
+    width: 47.75%;
+    background-color: white;
+    margin-left: 60px;
+}
+
+/* TODO dashboard  */
+.left_boxes {
+    display: grid;
+    background-color: #C9E5C4;
+    height: 40%;
+    width: 40%;
+    left: 23%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+
+#calendar_container{
+    top: 75%; 
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(6, auto);
+}
+
+.calendar_item {
+    display: flex;
+    place-items: center;
+    place-content: center;
+}
+
+.calendar_day {
+    background-color: none;
+}
+
+.calendar_week_header {
+    background-color: #79AD70;
+}
+
+#streaks_container {
+    top: 30%;
+}

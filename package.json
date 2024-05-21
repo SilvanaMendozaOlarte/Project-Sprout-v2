@@ -1,0 +1,35 @@
+{
+  "name": "Project Sprout",
+  "version": "1.0.0",
+  "description": "A Web App centered around productivity with a farming theme",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Team Sprout",
+    "url": "https://github.com/SilvanaMendozaOlarte/Project-Sprout/"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "",
+    "test": "",
+    "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s"
+  },
+  "devDependencies": {
+    "html-validate": "^8.18.1",
+    "http-server": "^14.1.1",
+    "prettier": "^3.2.5"
+  }
+}
