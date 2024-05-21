@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Clubbernaut</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="icon" type="image/x-icon" href="images/BOB!!!!.png">
+    <link rel="stylesheet" href="ui-classes.css">
+    <script src="https://kit.fontawesome.com/6fdc012af8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav id="main_navbar" class="navbar">
+        <img id="logo" src="images/BOB!!!!.png">
+        <div id="main_tabs" class="tabs">
+            <button class="tab" id="tab_pomodoro">Pomodoro</button>
+            <button class="tab" id="tab_farm">Farm</button>
+            <button class="tab" id="tab_shop">Shop</button>
+            <button class="tab" id="tab_projects">Projects</button>
+        </div>
+        <button class="tab" id="tab_sign_in">Sign In</button>
+        <img id="avatar" height="43" width="43" style="display: none;">
+    </nav>
+
+    <!-- Navbar Tabs -->
+
+    <div id="sign_in" class="page" style="display: block;">
+        <form>
+            <h1>Sign In</h1>
+            <label for="sign_in_email">Email:</label><br>
+            <input type="email" id="sign_in_email" required><br>
+            <label for="sign_in_password">Password:</label><br>
+            <input type="password" id="sign_in_password" required><br>
+            <input type="button" id="sign_in_button" value="Sign In">
+            <div id="sign_in_alert"></div>
+        </form>
+        <input type="button" id="sign_in_to_sign_up" value="Sign Up">
+    </div>
+
+    <!-- TODO - Silvana -->
+
+    <div id="pomodoro" class="page" style="display: none;">
+        <br>
+        <div id="timer">
+            <div id="num_reps" class="timer_navbar">
+                <div class="timer_tab">
+                    <input type="text" id="timer_rounds" placeholder="Enter # of Work/Rest Rounds" style="width: 300px">
+                </div>
+            </div>
+            <span id="pomodoro_work" class="timer_navbar">
+                <div class="timer_tab">
+                    Work Timer
+                </div>
+                <span>
+                    <input type="text" id="work_minutes" placeholder="Enter Minutes">
+                    <input type="text" id="work_seconds" placeholder="Enter Seconds">
+                </span>
+                <div></div>
+            </span>
+            <span id="pomodoro_break" class="timer_navbar">
+                <div class="timer_tab">
+                    Rest Timer
+                </div>
+                <span>
+                    <input type="text" id="rest_minutes" placeholder="Enter Minutes">
+                    <input type="text" id="rest_seconds" placeholder="Enter Seconds">
+                </span>
+                <div></div>
+            </span>
+            <div id="pomodoro_begin" class="timer_navbar">
+                <button class="tab" id="start_timer">Start Timer</button>
+            </div>
+        </div>
+        <div class="left_boxes" id="streaks_container" >
+            <div><canvas id="myChart"></canvas></div>
+        </div>
+        <div class="left_boxes" id="calendar_container">
+            <div id="calendar" ></div>
+        </div>
+    </div>
+
+
+    <!-- TODO - Jacob -->
+    <script type = 'module' src="farm.js"></script>
+    <link rel="stylesheet" href="farm_styles.css">
+
+    <div id="farm" class="page" style="display: none;">
+       
+        
+        <div id = 'farm-demo'>
+            
+            <div id="farm-inputs">
+                <h1 class="center">Farm</h1>
+        <div class="center" style="margin: 10px;">
+        <input class="input" placeholder="GOAL" id="daily-goal">
+        <input class="input" placeholder="TOMATOES" id="tomatoes"> 
+        </div>
+        <button id="submit-tomatoes" class="pom-button center-stupid-button">Submit<i class="fa-regular fa-paper-plane"></i></button>
+            </div>
+        <div id="farm-view-container">
+        <div id="farm-view">
+
+        </div>
+        </div>
+        </div>
+        
+    </div>
+
+    <!-- TODO - Donald -->
+
+    <div id="shop" class="page" style="display: none;">
+        <h1>Shop</h1>
+        <!-- Shop Navbar Tabs -->
+        <nav id="tab_shop_categories" class="navbar">
+            <div id="tab_shop_categories_left" class="tabs">
+                <button class="tab" id="tab_shop_category_house">House</button>
+                <button class="tab" id="tab_shop_category_garden">Garden</button>
+                <button class="tab" id="tab_shop_category_plants">Plants</button>
+                <button class="tab" id="tab_shop_category_avatar">Avatar</button>
+            </div>
+            <div id="tab_shop_categories_right">
+                <button class="tab" id="tab_shop_category_purchased_items">Purchased</button>
+                <button class="tab" id="tab_shop_category_choose_avatar">Choose Avatar</button>
+            </div>
+        </nav>
+        <div id="shop_category_house" class="shop_category" style="display: block;">
+        </div>
+        <div id="shop_category_garden" class="shop_category" style="display: none;">
+        </div>
+        <div id="shop_category_plants" class="shop_category" style="display: none;">
+        </div>
+        <div id="shop_category_avatar" class="shop_category" style="display: none;">
+        </div>
+        <div id="shop_category_garden_purchased_items" class="shop_category" style="display: none;">
+        </div>
+        <div id="shop_category_garden_choose_avatar" class="shop_category" style="display: none;">
+        </div>
+    </div>
+
+    <!-- TODO - Chris -->
+
+    <div id="projects" class="page" style="display: none;">
+        <h1 style="margin-left: 65px;">Projects and Tasks</h1>
+        <p style="margin-left: 65px;">This is the list of your Projects and Tasks.</p>
+        <!-- Create Project -->
+        <button id="createProjectButton" style="margin-left: 65px; margin-top: 5px; margin-bottom: 5px;">Create New Project</button>
+        <div id="myAddProjectPopup" class="projectPopup">
+            <div class="popup-content">
+                <p>Enter Project Name:</p>
+                <input type="text" id="projectName"><br>
+                <div class="btn-group">
+                    <button id="closeAddProjectPopup">Close</button>
+                    <button id="createProject">Create Project</button>
+                </div>
+            </div>
+        </div>
+        <!-- Create Task -->
+        <button id="taskButton">Create New Task</button>
+        <div id="myTaskPopup" class="taskPopup">
+            <div class="popup-content">
+                <p>Enter Task:</p>
+                <input type="text" id="taskName"><br>
+                <p>Add Task to Which Project:</p>
+                <select id="projectList">
+                    <option value="misc" id="projlistmisc">Miscellaneous</option>
+                </select>
+                <p>Due Date:</p>
+                <input type="date" id="dueDate">
+                <div class="btn-group">
+                    <button id="closeTaskPopup">Close</button>
+                    <button id="createTask">Create Task</button>
+                </div>
+            </div>
+        </div>
+        <!-- Remove Project -->
+        <button id="removeProjectButton">Delete Project</button>
+        <div id="myRmProjectPopup" class="projectRemovePopup">
+            <div class="popup-content">
+                <p>Remove Which Project?</p>
+                <select id="projectRemoveList">
+                </select>
+                <div class="btn-group">
+                    <button id="closeRmProjectPopup">Close</button>
+                    <button id="removeProject">Delete Project</button>
+                </div>
+            </div>
+        </div>
+        <!-- Remove Task -->
+        <button id="removeTaskButton">Delete Task</button>
+        <div id="myRmTaskProjectPopup" class="removeTaskProjectPopup">
+            <div class="popup-content">
+                <p>Which Project to Delete a Task From?</p>
+                <select id="taskRmProjectList">
+                    <option value="misc" id="taskrmprojlistmisc">Miscellaneous</option>
+                </select>
+                <div class="btn-group">
+                    <button id="closeRmTaskProjectPopup">Close</button>
+                    <button id="chooseProject">Choose Project</button>
+                </div>
+            </div>
+        </div>
+        <div id="myRmTaskTaskPopup" class="removeTaskTaskPopup">
+            <div class="popup-content">
+                <p>Which Task to Delete?</p>
+                <select id="taskRmTaskList">
+                </select>
+                <div class="btn-group">
+                    <button id="backRmTaskTaskPopup">Back</button>
+                    <button id="chooseTask">Delete Task</button>
+                </div>
+            </div>
+        </div>
+        <!-- Collapsible List -->
+        <div id="collapsibles">
+        </div>
+    </div>
+
+    <!-- Other Tabs -->
+
+    <div id="sign_up" class="page" style="display: none;">
+        <h1>Sign Up</h1>
+        <form>
+            <label for="sign_up_email">Email:</label><br>
+            <input type="email" id="sign_up_email" required><br>
+            <label for="sign_up_username">Username:</label><br>
+            <input type="text" id="sign_up_username" required><br>
+            <label for="sign_up_password">Password:</label><br>
+            <input type="password" id="sign_up_password" required><br>
+            <label for="sign_up_confirm_password">Confirm Password:</label><br>
+            <input type="password" id="sign_up_confirm_password" required><br>
+            <input type="button" id="sign_up_button" value="Sign Up">
+            <div id="sign_up_alert"></div>
+        </form>
+        <input type="button" id="sign_up_to_sign_in" value="Sign In">
+    </div>
+
+    <div id="user_settings" class="page" style="display: none;">
+        <h1>User Settings</h1>
+        <p>This is the content of User Settings.</p>
+    </div>
+
+    <div id="forgot_password" class="page" style="display: none;">
+        <h1>Forgot Password</h1>
+        <p>This is the content of Forgot Password.</p>
+    </div>
+
+    <div id="sign_up_successful" class="page" style="display: none;">
+        <p>You signed up!</p>
+    </div>
+
+    <div id="sign_in_successful" class="page" style="display: none;">
+        <p>You signed in!</p>
+    </div>
+
+    <!-- Normal JavaScript -->
+
+    <script>
+        // function addProject() {
+        //     // This function creates a new project collapsible with the entered name
+        //     // from the popup, and gives it an id of "button" + the entered name.
+        //     // This collapsible is then given an event listener to open and close 
+        //     // when clicked on.
+        //     let projName = document.getElementById("projectName");
+        //     const newButton = document.createElement("button");
+        //     newButton.setAttribute("type", "button");
+        //     newButton.classList.add("collapsible");
+        //     newButton.setAttribute("id", "button"+projName.value);
+        //     newButton.innerHTML = projName.value;
+        //     newButton.addEventListener("click", function() {
+        //         this.classList.toggle("active");
+        //         var content = this.nextElementSibling;
+        //         if (content.style.display === "block") {
+        //             content.style.display = "none";
+        //         } else {
+        //             content.style.display = "block";
+        //         }
+        //     });
+        //     // Then, the collapsible's div and menu elements are created and are given
+        //     // ids of "div" + entered name, and "menu" + entered name respectively.
+        //     // Then, the menu is appended as a child to the new div
+        //     const newDiv = document.createElement("div");
+        //     newDiv.classList.add("content");
+        //     newDiv.setAttribute("id", "div"+projName.value);
+        //     const newMenu = document.createElement("menu");
+        //     newMenu.setAttribute("id", "menu"+projName.value);
+        //     newDiv.appendChild(newMenu);
+        //     //The collapsible button and div are added to the collapsible wrapper
+        //     collapsibleWrapper.appendChild(newButton);
+        //     collapsibleWrapper.appendChild(newDiv);
+        //     // The newly created project is then added to the lists of created
+        //     // projects in the "Add Task", "Delete Project", and "Delete Task" popups.
+        //     const projList = document.getElementById("projectList");
+        //     const projRmList = document.getElementById("projectRemoveList");
+        //     const taskRmProjectList = document.getElementById("taskRmProjectList");
+        //     const newProjListOption = document.createElement("option");
+        //     newProjListOption.setAttribute("value", projName.value);
+        //     newProjListOption.setAttribute("id", "projlist"+projName.value);
+        //     newProjListOption.innerHTML = projName.value;
+        //     const newProjRmListOption = document.createElement("option");
+        //     newProjRmListOption.setAttribute("value", projName.value);
+        //     newProjRmListOption.setAttribute("id", "rmList"+projName.value);
+        //     newProjRmListOption.innerHTML = projName.value;
+        //     const newTaskRmProjListOption = document.createElement("option");
+        //     newTaskRmProjListOption.setAttribute("value", projName.value);
+        //     newTaskRmProjListOption.setAttribute("id", "taskrmprojlist"+projName.value);
+        //     newTaskRmProjListOption.innerHTML = projName.value;
+        //     taskRmProjectList.appendChild(newTaskRmProjListOption);
+        //     projList.appendChild(newProjListOption);
+        //     projRmList.appendChild(newProjRmListOption);
+            
+        //     // db variables
+        //     let projectName = projName.value;
+
+        //     fetch(`http://127.0.0.1:3260/addProject?name=${projectName}`, {
+        //         method: 'POST',
+        //     })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.text();
+        //     })
+        //     .then(data => {
+        //         console.log('Response from server:', data);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+            
+        // }
+
+        // function addTask() {
+        //     // Creates a new task with a checkbox and the entered name, and adds it 
+        //     // to the chosen project collapsible
+        //     let tskName = document.getElementById("taskName");
+        //     const projMenu = document.getElementById("menu"+projectList.value);
+        //     const newListElement = document.createElement("li");
+        //     newListElement.setAttribute("id", projectList.value+"list"+tskName.value);
+        //     newListElement.setAttribute("value", tskName.value);
+        //     let taskDueDate = document.getElementById("dueDate");
+        //     newListElement.innerHTML = `<input type="checkbox"> `+ tskName.value + " (Due Date: " + taskDueDate.value + ")";
+        //     projMenu.appendChild(newListElement);
+        //     const newTaskRmTaskListOption = document.createElement("option");
+        //     newTaskRmTaskListOption.setAttribute("value", tskName.value);
+        //     newTaskRmTaskListOption.setAttribute("id", "taskrmtasklist"+tskName.value);
+        //     newTaskRmTaskListOption.setAttribute("style", "display: none;");
+        //     let trimProjectList = projectList.value.replace(/\s/g, '');
+        //     newTaskRmTaskListOption.classList.add("taskrmproj"+trimProjectList);
+        //     newTaskRmTaskListOption.innerHTML = tskName.value;
+        //     taskRmTaskList.appendChild(newTaskRmTaskListOption);
+
+        //     // db variables
+        //     let projectName = projectList.value;
+        //     let taskName = tskName.value;
+        //     let date = taskDueDate.value;
+
+        //     fetch(`http://127.0.0.1:3260/addTask?project=${projectName}&name=${taskName}&due=${date}`, {
+        //         method: 'POST',
+        //     })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log('Response from server:', data);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // }
+
+        // function deleteProject() {
+        //     // Deletes the project chosen in the "Delete Project" popup
+        //     const removeButton = document.getElementById("button"+projectRemoveList.value);
+        //     const removeDiv = document.getElementById("div"+projectRemoveList.value);
+            
+        //     // db variables
+        //     let project = projectRemoveList.value;
+
+        //     removeDiv.remove();
+        //     removeButton.remove();
+        //     // Removes the deleted project from the project lists in the "Add Task",
+        //     // "Delete Project", and "Delete Task" popups
+        //     const projListOption = document.getElementById("projlist"+projectRemoveList.value);
+        //     const projRmListOption = document.getElementById("rmList"+projectRemoveList.value);
+        //     const taskRmListOption = document.getElementById("taskrmprojlist"+projectRemoveList.value);
+        //     const selector = document.getElementById("taskRmTaskList");
+        //     let trimProjectRemoveList = projectRemoveList.value.replace(/\s/g, '');
+        //     var children = selector.children;
+        //     for (let i = 0; i < children.length; i++) {
+        //         const child = children[i];
+        //         if (child.classList.contains("taskrmproj"+trimProjectRemoveList)) {
+        //             child.remove();
+        //         }
+        //     }
+        //     projListOption.remove();
+        //     projRmListOption.remove();
+        //     taskRmListOption.remove();
+
+        //     fetch(`http://127.0.0.1:3260/removeProject?project=${project}`, {
+        //         method: 'DELETE',
+        //     })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log('Response from server:', data);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // }
+
+        // function deleteTask() {
+        //     // Deletes the chosen task and removes it from the "Delete Task" popup
+        //     const taskToRemove = document.getElementById(taskRmProjectList.value+"list"+taskRmTaskList.value);
+        //     const rmFromTaskRmList = document.getElementById("taskrmtasklist"+taskRmTaskList.value);
+
+        //     // db variables
+        //     let project = taskRmProjectList.value;
+        //     let task = taskRmTaskList.value;
+
+        //     taskToRemove.remove();
+        //     rmFromTaskRmList.remove();
+
+        //     fetch(`http://127.0.0.1:3260/removeTask?project=${project}&task=${task}`, {
+        //         method: 'DELETE',
+        //     })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log('Response from server:', data);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // }
+
+        // Opens the "Create New Project" popup
+        createProjectButton.addEventListener("click", function () { 
+            myAddProjectPopup.classList.add("show");
+        });
+        // Opens the "Create New Task" popup
+        taskButton.addEventListener("click", function () { 
+            myTaskPopup.classList.add("show");
+        });
+        // Opens the "Delete Project" popup
+        removeProjectButton.addEventListener("click", function () { 
+            myRmProjectPopup.classList.add("show");
+        });
+        // Opens the first "Delete Task" popup where you choose a project to remove
+        // a task from
+        removeTaskButton.addEventListener("click", function () { 
+            myRmTaskProjectPopup.classList.add("show");
+        });
+        // Closes the "Create New Project" popup
+        closeAddProjectPopup.addEventListener("click", function () {
+            myAddProjectPopup.classList.remove("show");
+        });
+        // Closes the "Create New Task" popup
+        closeTaskPopup.addEventListener("click", function () {
+            myTaskPopup.classList.remove("show");
+        });
+        // Closes the "Delete Project" popup
+        closeRmProjectPopup.addEventListener("click", function () {
+            myRmProjectPopup.classList.remove("show");
+        });
+        // Closes the first "Delete Task" popup
+        closeRmTaskProjectPopup.addEventListener("click", function () {
+            myRmTaskProjectPopup.classList.remove("show");
+        });
+        // Closes the second "Delete Task" popup and opens up the first again
+        backRmTaskTaskPopup.addEventListener("click", function () {
+            myRmTaskTaskPopup.classList.remove("show");
+            myRmTaskProjectPopup.classList.add("show");
+        });
+        // Closes the first "Delete Task" popup, alters the display of "taskRmTaskList"
+        // so that only tasks in the chosen project will appear in the list, then
+        // opens the second "Delete Task" popup with the list of tasks in that project
+        chooseProject.addEventListener("click", function() {
+            myRmTaskProjectPopup.classList.remove("show");
+            const selector = document.getElementById("taskRmTaskList");
+            let trimTaskRmProjectList = taskRmProjectList.value.replace(/\s/g, '');
+            var children = selector.children;
+            let selected = false;
+            for (let i = 0; i < children.length; i++) {
+                const child = children[i];
+                if (child.classList.contains("taskrmproj"+trimTaskRmProjectList)) {
+                    if (selected === false) {
+                        selector.selectedIndex = i;
+                        selected = true;
+                    }
+                    child.setAttribute("style", "");
+                }
+                else {
+                    child.setAttribute("style", "display: none;");
+                }
+            }
+            myRmTaskTaskPopup.classList.add("show");
+        });
+        // Creates a new project, clears the text box in the "Create New Project" 
+        // popup, and closes the popup
+        createProject.addEventListener("click", function () {
+            myAddProjectPopup.classList.remove("show");
+        });
+        // Creates a new task, clears the text box in the "Create New Task" popup, 
+        // and closes the popup
+        createTask.addEventListener("click", function () {
+            myTaskPopup.classList.remove("show");
+        });
+        // Deletes the chosen project and closes the "Delete Project" popup
+        removeProject.addEventListener("click", function () {
+            myRmProjectPopup.classList.remove("show");
+        });
+        chooseTask.addEventListener("click", function () {
+            myRmTaskTaskPopup.classList.remove("show");
+        });
+        // Closes the current popup if you click anywhere else in the tab
+        window.addEventListener("click", function (event) {
+            if (event.target == myAddProjectPopup) {
+                myAddProjectPopup.classList.remove("show");
+                let projName = document.getElementById("projectName");
+                projName.value = "";
+            }
+            if (event.target == myTaskPopup) {
+                myTaskPopup.classList.remove("show");
+                let tskName = document.getElementById("taskName");
+                tskName.value = "";
+            }
+            if (event.target == myRmProjectPopup) {
+                myRmProjectPopup.classList.remove("show");
+            }
+            if (event.target == myRmTaskProjectPopup) {
+                myRmTaskProjectPopup.classList.remove("show");
+            }
+            if (event.target == myRmTaskTaskPopup) {
+                myRmTaskTaskPopup.classList.remove("show");
+            }
+        });
+    </script>
+
+    <!-- Module JavaScript -->
+
+    <script type="module">
+        // Imports page and shop category changing functions
+        import ChangePage from './changePage.js';
+        import ChangeShopCategory from './changeShopCategory.js';
+        // Instantiates page and shop category changing objects
+        const pageChanger = new ChangePage();
+        const shopCategoryChanger = new ChangeShopCategory();
+        // Setting up event listeners to change pages
+        document.getElementById('tab_pomodoro').addEventListener('click', () => pageChanger.changePage('pomodoro'));
+        document.getElementById('tab_farm').addEventListener('click', () => pageChanger.changePage('farm'));
+        document.getElementById('tab_projects').addEventListener('click', () => pageChanger.changePage('projects'));
+        document.getElementById('tab_sign_in').addEventListener('click', () => pageChanger.changePage('sign_in'));
+        document.getElementById('sign_in_button').addEventListener('click', () => pageChanger.changePage('sign_in_successful'));
+        document.getElementById('sign_up_button').addEventListener('click', () => pageChanger.changePage('sign_up_successful'));
+        document.getElementById('sign_in_to_sign_up').addEventListener('click', () => pageChanger.changePage('sign_up'));
+        document.getElementById('sign_up_to_sign_in').addEventListener('click', () => pageChanger.changePage('sign_in'));
+        // Loading JSON data
+        await fetch('./fakedata.json')
+            .then(response => response.json())
+            .then(data => {
+                // Setting up event listeners to change shop categories
+                document.getElementById('tab_shop_category_house').addEventListener('click', () => shopCategoryChanger.changeShopCategory('shop_category_house', data));
+                document.getElementById('tab_shop_category_garden').addEventListener('click', () => shopCategoryChanger.changeShopCategory('shop_category_garden', data));
+                document.getElementById('tab_shop_category_plants').addEventListener('click', () => shopCategoryChanger.changeShopCategory('shop_category_plants', data));
+                document.getElementById('tab_shop_category_avatar').addEventListener('click', () => shopCategoryChanger.changeShopCategory('shop_category_avatar', data));
+                document.getElementById('tab_shop_category_purchased_items').addEventListener('click', () => shopCategoryChanger.changeShopCategory('shop_category_purchased_items', data));
+                document.getElementById('tab_shop_category_choose_avatar').addEventListener('click', () => shopCategoryChanger.changeShopCategory('shop_category_choose_avatar', data));
+                document.getElementById('tab_shop').addEventListener('click', () => {
+                    pageChanger.changePage('shop')
+                    shopCategoryChanger.changeShopCategory('shop_category_house', data);
+                });
+            });
+    </script>
+    <script src="Calendar.js"></script>
+    <script type="module" src="Project.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="Streaks.js"></script>
+    <script type="module" src="timer.js"></script>
+</body>
+</html>

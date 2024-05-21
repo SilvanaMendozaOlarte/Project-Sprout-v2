@@ -1,0 +1,46 @@
+{
+  "name": "Project Sprout",
+  "version": "1.0.0",
+  "description": "A Web App centered around productivity with a farming theme",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Team Sprout",
+    "url": "https://github.com/SilvanaMendozaOlarte/Project-Sprout/"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "",
+    "test": "",
+    "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
+    "milestone-02": "http-server milestone-02 -p 5500 -c-1 -o -s",
+    "ms-3-cli": "http-server milestone-03/client -p 5500 -c-1 -o -s",
+    "ms-3-serv": "node milestone-03/Server/index.js",
+    "milestone-03":"npm run ms-3-cli & npm run ms-3-serv" 
+  },
+  "devDependencies": {
+    "html-validate": "^8.18.1",
+    "http-server": "^14.1.1",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "pouchdb": "^8.0.1",
+    "pouchdb-browser": "^8.0.1",
+    "archiver": "^6.0.1",
+    "http-server": "^14.1.1",
+    "wordwrapjs": "^5.1.0"
+  }
+}
